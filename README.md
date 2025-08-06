@@ -1,6 +1,9 @@
 # BrowserQuest Quick Start
 
-BrowserQuest is a multiplayer HTML5/JavaScript game.
+
+BrowserQuest is a free massively multiplayer online role-playing HTML5/JavaScript game 😮‍💨 created by French developer Little Workshop and the Mozilla Foundation.
+
+BrowserQuest is a demonstration of a number of modern web technologies. It is written for the web platform, utilizing WebSockets for multiplayer networking, and is playable from modern web browsers. The client makes use of canvas elements to render the graphics, web workers to initialize the map without affecting the rest of the page, localStorage to save progress, media queries to dynamically resize the game to the device, and HTML audio to render the sound. The server is written in JavaScript, and runs in Node.js. The server and browser communicate using WebSockets.
 
 ## Requirements
 
@@ -11,7 +14,7 @@ BrowserQuest is a multiplayer HTML5/JavaScript game.
 ## 1. Clone the repository
 
 ```sh
-git clone https://github.com/YOUR_GITHUB_USERNAME/Browserquest.git
+git clone git@github.com:gonzalo-munillag/BrowserQuest.git
 cd Browserquest
 ```
 
@@ -55,10 +58,21 @@ Go to: [http://localhost:8000/](http://localhost:8000/)
 - The default port is `8000`. If you want to change it, edit `server/config.json` or create `server/config_local.json`.
 - For more details, see the full documentation in the [wiki](https://github.com/browserquest/BrowserQuest/wiki).
 - For Windows or Linux, install Redis and Node.js using your platform's package manager or from their official websites.
+- If you plan to clone the project and create your own GitHub repository, run this command locally to ensure the default Git buffer size can handle the large project size when pushing:
+
+```sh 
+git config --global http.postBuffer 157286400
+```
+
+That one worked well in my Mac. This one for Linux:
+
+```sh 
+git config http.postBuffer 524288000
+```
 
 ---
 
 ## Credits & License
 
 - Code is licensed under MPL 2.0. Content is licensed under CC-BY-SA 3.0. See the LICENSE file for details.
-- Originally created by [Little Workshop](http://www.littleworkshop.fr) and the open source community.
+- Originally created by [Little Workshop](http://www.littleworkshop.fr) and the Mozilla Foundation.
