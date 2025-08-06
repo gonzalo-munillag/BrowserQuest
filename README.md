@@ -1,7 +1,7 @@
 # BrowserQuest Quick Start
 
 
-BrowserQuest is a free massively multiplayer online role-playing HTML5/JavaScript game 😮‍💨 created by French developer Little Workshop and the Mozilla Foundation.
+BrowserQuest is a free massively multiplayer online role-playing HTML5/JavaScript game 😮‍💨 created by French developer Little Workshop and the Mozilla Foundation. I played it as a teenager and wanted to bring it back as a small project 😄 a little gem from 2012.
 
 <p align="center">
   <img src="./browserquest.webp" />
