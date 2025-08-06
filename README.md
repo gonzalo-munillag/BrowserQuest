@@ -1,7 +1,8 @@
 # BrowserQuest Quick Start
 
-
 BrowserQuest is a free massively multiplayer online role-playing HTML5/JavaScript game 😮‍💨 created by French developer Little Workshop and the Mozilla Foundation. I played it as a teenager and wanted to bring it back as a small project 😄 a little gem from 2012.
+
+This README will help you run the game locally via **Docker** or **command line**.
 
 <p align="center">
   <img src="./browserquest.webp" />
@@ -16,26 +17,73 @@ I only needed to update the Redis-related code, as it was originally written for
 
 In BrowserQuest, players can interact with each other using the in-game chat system, or by working together to defeat enemies.[2] There are achievements available to unlock as one plays. Loot is dropped when players defeat the enemies, which can be picked up by any player. Loot includes the invincibility potion, which changes a player's outfit to appear like the Firefox logo, and various gear. At one point in time, the system recorded over 1,900 concurrent users playing at the same time. [[Wikipedia](https://en.wikipedia.org/wiki/BrowserQuest)]
 
-## Requirements
+## Quick Start with Docker (Recommended)
+
+The easiest way to run BrowserQuest is using Docker. This method automatically handles all dependencies including Redis.
+
+### Prerequisites
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Run with Docker
+
+1. **Clone the repository:**
+   ```sh
+   git clone git@github.com:gonzalo-munillag/BrowserQuest.git
+   cd Browserquest
+   ```
+
+2. **Build and start the containers:**
+   ```sh
+   docker-compose up --build -d
+   ```
+
+3. **Open the game in your browser:**
+   Go to: [http://localhost:8000/](http://localhost:8000/)
+
+### Docker Commands
+
+- **View logs:**
+  ```sh
+  docker-compose logs -f
+  ```
+
+- **Stop the game:**
+  ```sh
+  docker-compose down
+  ```
+
+- **Restart the game:**
+  ```sh
+  docker-compose restart
+  ```
+
+---
+
+## Manual Setup (Command Line)
+
+If you prefer to run the game without Docker, follow these steps:
+
+### Requirements
 
 - [Node.js](https://nodejs.org/) (v14+ recommended)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 - [Redis](https://redis.io/) (for the backend database)
 
-## 1. Open the Terminal and Clone the repository
+### 1. Clone the repository
 
 ```sh
 git clone git@github.com:gonzalo-munillag/BrowserQuest.git
 cd Browserquest
 ```
 
-## 2. Install dependencies
+### 2. Install dependencies
 
 ```sh
 npm install
 ```
 
-## 3. Start Redis
+### 3. Start Redis
 
 Make sure Redis is running.
 
@@ -52,13 +100,13 @@ Or, simply run:
 redis-server
 ```
 
-## 4. Start the game server
+### 4. Start the game server
 
 ```sh
 node server/js/main.js
 ```
 
-## 5. Open the game in your browser
+### 5. Open the game in your browser
 
 Go to: [http://localhost:8000/](http://localhost:8000/)
 

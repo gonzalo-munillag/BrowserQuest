@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # BrowserQuest Game Server
+  browserquest:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    environment:
+      - NODE_ENV=production
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    networks:
+      - browserquest-network
+
+  # Redis Database
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    networks:
+      - browserquest-network
+    command: redis-server --appendonly yes
+
+volumes:
+  redis-data:
+
+networks:
+  browserquest-network:
+    driver: bridge 
