@@ -51,7 +51,9 @@ define(['player', 'entityfactory', 'lib/bison'], function(Player, EntityFactory,
         },
 
         connect: function(dispatcherMode) {
-            var url = "ws://"+ this.host +":"+ this.port +"/",
+            var protocol = (window.location.protocol === 'https:') ? 'wss://' : 'ws://';
+            var port = (window.location.protocol === 'https:') ? 443 : this.port;
+            var url = protocol + this.host + ":" + port + "/",
                 self = this;
 
             log.info("Trying to connect to server : "+url);
